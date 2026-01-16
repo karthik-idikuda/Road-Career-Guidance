@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Career Roadmap — PathFinder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="results.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i data-lucide="compass" class="logo-icon"></i>
+                <span>PathFinder</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore Careers</a></li>
+                <li><a href="colleges.html">Find Colleges</a></li>
+                <li><a href="questionnaire.html">Career Assessment</a></li>
+            </ul>
+            <a href="questionnaire.html" class="nav-cta">
+                <span>Retake Assessment</span>
+                <i data-lucide="refresh-cw"></i>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore Careers</a></li>
+            <li><a href="colleges.html">Find Colleges</a></li>
+            <li><a href="questionnaire.html">Career Assessment</a></li>
+        </ul>
+    </div>
+
+    <!-- Results Header -->
+    <section class="results-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="success-icon animate-fade-up">
+                    <i data-lucide="check-circle-2"></i>
+                </div>
+                <h1 class="animate-fade-up delay-1">Your Personalized Career Roadmap</h1>
+                <p class="animate-fade-up delay-2">Based on your goals, skills, and interests, here are our recommendations for you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Content -->
+    <main class="results-main">
+        <div class="container">
+            <div class="results-grid">
+                <!-- Main Content -->
+                <div class="results-content">
+                    <!-- Career Matches -->
+                    <section class="result-section career-matches">
+                        <div class="section-header-inline">
+                            <div class="section-icon">
+                                <i data-lucide="target"></i>
+                            </div>
+                            <div>
+                                <h2>Top Career Matches</h2>
+                                <p>Careers that align with your profile</p>
+                            </div>
+                        </div>
+                        <div class="career-match-cards" id="careerMatches">
+                            <!-- Dynamic content -->
+                        </div>
+                    </section>
+
+                    <!-- Roadmap Timeline -->
+                    <section class="result-section roadmap-section">
+                        <div class="section-header-inline">
+                            <div class="section-icon">
+                                <i data-lucide="route"></i>
+                            </div>
+                            <div>
+                                <h2>Your Learning Roadmap</h2>
+                                <p>Step-by-step guide to achieve your goals</p>
+                            </div>
+                        </div>
+                        <div class="roadmap-timeline" id="roadmapTimeline">
+                            <!-- Dynamic content -->
+                        </div>
+                    </section>
+
+                    <!-- Skills to Develop -->
+                    <section class="result-section skills-section">
+                        <div class="section-header-inline">
+                            <div class="section-icon">
+                                <i data-lucide="zap"></i>
+                            </div>
+                            <div>
+                                <h2>Skills to Develop</h2>
+                                <p>Key skills for your target careers</p>
+                            </div>
+                        </div>
+                        <div class="skills-grid" id="skillsGrid">
+                            <!-- Dynamic content -->
+                        </div>
+                    </section>
+
+                    <!-- Recommended Colleges -->
+                    <section class="result-section colleges-section">
+                        <div class="section-header-inline">
+                            <div class="section-icon">
+                                <i data-lucide="building-2"></i>
+                            </div>
+                            <div>
+                                <h2>Recommended Colleges</h2>
+                                <p>Top institutions for your chosen path</p>
+                            </div>
+                        </div>
+                        <div class="colleges-list" id="collegesList">
+                            <!-- Dynamic content -->
+                        </div>
+                        <a href="colleges.html" class="btn btn-outline-dark">
+                            <span>View All Colleges</span>
+                            <i data-lucide="arrow-right"></i>
+                        </a>
+                    </section>
+
+                    <!-- Free Resources -->
+                    <section class="result-section resources-section">
+                        <div class="section-header-inline">
+                            <div class="section-icon">
+                                <i data-lucide="book-open"></i>
+                            </div>
+                            <div>
+                                <h2>Free Learning Resources</h2>
+                                <p>Start learning today with these resources</p>
+                            </div>
+                        </div>
+                        <div class="resources-grid" id="resourcesGrid">
+                            <!-- Dynamic content -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="results-sidebar">
+                    <!-- Profile Summary -->
+                    <div class="sidebar-card profile-summary">
+                        <h3>Your Profile</h3>
+                        <div class="profile-item">
+                            <i data-lucide="user"></i>
+                            <span id="userName">Student</span>
+                        </div>
+                        <div class="profile-item">
+                            <i data-lucide="graduation-cap"></i>
+                            <span id="userEducation">Education</span>
+                        </div>
+                        <div class="profile-item">
+                            <i data-lucide="map-pin"></i>
+                            <span id="userLocation">Location</span>
+                        </div>
+                    </div>
+
+                    <!-- Match Score -->
+                    <div class="sidebar-card match-score">
+                        <h3>Career Match Score</h3>
+                        <div class="score-circle">
+                            <svg viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" class="score-bg"></circle>
+                                <circle cx="50" cy="50" r="45" class="score-fill" id="scoreCircle"></circle>
+                            </svg>
+                            <div class="score-value">
+                                <span id="scoreValue">85</span>
+                                <span class="score-percent">%</span>
+                            </div>
+                        </div>
+                        <p>Strong match with your selected careers</p>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="sidebar-card quick-actions">
+                        <h3>Quick Actions</h3>
+                        <button class="action-btn" onclick="window.print()">
+                            <i data-lucide="download"></i>
+                            <span>Download Report</span>
+                        </button>
+                        <button class="action-btn" onclick="shareResults()">
+                            <i data-lucide="share-2"></i>
+                            <span>Share Results</span>
+                        </button>
+                        <a href="questionnaire.html" class="action-btn">
+                            <i data-lucide="refresh-cw"></i>
+                            <span>Retake Assessment</span>
+                        </a>
+                    </div>
+
+                    <!-- Need Help -->
+                    <div class="sidebar-card need-help">
+                        <div class="help-icon">
+                            <i data-lucide="message-circle"></i>
+                        </div>
+                        <h3>Need Guidance?</h3>
+                        <p>Have questions about your career path? We're here to help.</p>
+                        <a href="#" class="btn btn-primary btn-sm">
+                            <span>Get Expert Help</span>
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <i data-lucide="compass"></i>
+                        <span>PathFinder</span>
+                    </a>
+                    <p>Helping students discover their perfect career path through personalized guidance and actionable roadmaps.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="explore.html">Explore Careers</a></li>
+                        <li><a href="colleges.html">Find Colleges</a></li>
+                        <li><a href="questionnaire.html">Career Assessment</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Career Fields</h4>
+                    <ul>
+                        <li><a href="explore.html?category=technology">Technology</a></li>
+                        <li><a href="explore.html?category=healthcare">Healthcare</a></li>
+                        <li><a href="explore.html?category=business">Business</a></li>
+                        <li><a href="explore.html?category=engineering">Engineering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Get career tips and guidance delivered to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">
+                            <i data-lucide="send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PathFinder. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data/careers.js"></script>
+    <script src="data/career_database.js"></script>
+    <script src="engine.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            initNavbar();
+            initMobileMenu();
+            
+            // Initialize Engine
+            const engine = new RecommendationEngine(window.careerDatabase);
+            loadResults(engine);
+        });
+
+        // ... [initNavbar and initMobileMenu remain same] ...
+        function initNavbar() {
+            const navbar = document.getElementById('navbar');
+            if (!navbar) return;
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 50) navbar.classList.add('scrolled');
+            });
+        }
+
+        function initMobileMenu() {
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (!menuBtn || !mobileMenu) return;
+            
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                const icon = menuBtn.querySelector('i');
+                icon.setAttribute('data-lucide', mobileMenu.classList.contains('active') ? 'x' : 'menu');
+                lucide.createIcons();
+            });
+        }
+
+        function loadResults(engine) {
+            // Get form data from session storage
+            const formDataStr = sessionStorage.getItem('pathfinderFormData');
+            let formData = {};
+            
+            try {
+                if (formDataStr) formData = JSON.parse(formDataStr);
+            } catch(e) { console.error("Error parsing form data", e); }
+
+            // Update profile summary UI
+            updateProfileUI(formData);
+
+            // Get Recommendations
+            const recommendations = engine.getRecommendations(formData);
+            const topMatch = recommendations[0];
+
+            // Render Page Sections
+            loadCareerMatches(recommendations);
+            loadRoadmap(topMatch ? topMatch.roadmap : []);
+            loadSkills(topMatch, formData);
+            loadColleges(topMatch);
+            loadResources(topMatch);
+            
+            // Animate score based on top match
+            const score = topMatch ? topMatch.matchScore : 0;
+            animateScore(score);
+        }
+
+        function updateProfileUI(formData) {
+            const userName = formData.step1?.name || 'Student';
+            const userEducation = formData.step3?.education || 'High School';
+            const userLocation = formData.step1?.location?.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()) || 'India';
+            
+            document.getElementById('userName').textContent = userName;
+            document.getElementById('userEducation').textContent = formatEducation(userEducation);
+            document.getElementById('userLocation').textContent = userLocation;
+        }
+
+        function formatEducation(edu) {
+            const mapping = {
+                '10th': '10th Standard',
+                '12th': '12th Standard',
+                'diploma': 'Diploma',
+                'bachelors': "Bachelor's Degree",
+                'masters': "Master's Degree",
+                'phd': 'Ph.D'
+            };
+            return mapping[edu] || edu;
+        }
+
+        function loadCareerMatches(recommendations) {
+            const container = document.getElementById('careerMatches');
+            
+            container.innerHTML = recommendations.slice(0, 3).map((career, index) => `
+                <div class="career-match-card animate-on-scroll" style="animation-delay: ${index * 0.1}s">
+                    <div class="match-content" style="width: 100%">
+                        <div style="display:flex; justify-content:space-between; align-items:start;">
+                            <div>
+                                <span class="match-badge" style="margin-bottom: 0.5rem; display:inline-block; background: var(--primary-50); color: var(--primary);">${career.matchScore}% Match</span>
+                                <h3>${career.title}</h3>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--gray-500); margin: 0.5rem 0;">${career.description}</p>
+                        
+                        <div class="match-why" style="background: var(--off-white); padding: 0.75rem; border-radius: var(--radius-md); margin: 1rem 0; font-size: 0.85rem; color: var(--gray-600);">
+                            <strong><i data-lucide="sparkles" style="width:14px; display:inline;"></i> Why:</strong> ${career.why}
+                        </div>
+
+                        <div class="match-meta">
+                            <span><i data-lucide="indian-rupee"></i> ${career.salary}</span>
+                            <span><i data-lucide="trending-up"></i> ${career.growth} Growth</span>
+                        </div>
+                        <a href="explore.html" class="btn btn-sm btn-outline-dark" style="margin-top: 1rem;">View Details</a>
+                    </div>
+                </div>
+            `).join('');
+            
+            lucide.createIcons();
+        }
+
+        function loadRoadmap(steps) {
+            const container = document.getElementById('roadmapTimeline');
+            if(!steps || steps.length === 0) {
+                container.innerHTML = '<p>No specific roadmap found.</p>';
+                return;
+            }
+
+            container.innerHTML = steps.map((step, index) => `
+                <div class="timeline-item animate-on-scroll" style="animation-delay: ${index * 0.1}s">
+                    <div class="timeline-marker">
+                        <i data-lucide="${step.icon}"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <span class="timeline-phase">${step.phase}</span>
+                        <h4>${step.title}</h4>
+                        <p>${step.description}</p>
+                    </div>
+                </div>
+            `).join('');
+            
+            lucide.createIcons();
+        }
+
+        function loadSkills(career, formData) {
+            const container = document.getElementById('skillsGrid');
+            if (!career) return;
+            
+            const userSkills = [...(formData.step4?.technicalSkills || []), ...(formData.step4?.softSkills || [])];
+
+            const skillsToShow = career.matchCriteria.skills.map(skill => {
+                const hasSkill = userSkills.includes(skill);
+                return {
+                    name: skill.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()),
+                    level: hasSkill ? 'You have this' : 'To Learn',
+                    priority: hasSkill ? 'high' : 'medium'
+                };
+            });
+
+            container.innerHTML = skillsToShow.map(skill => `
+                <div class="skill-card priority-${skill.priority}">
+                    <div class="skill-info">
+                        <h4>${skill.name}</h4>
+                        <span class="skill-level">${skill.level}</span>
+                    </div>
+                    <div class="skill-progress">
+                        <div class="progress-bar" style="width: ${skill.priority === 'high' ? '100%' : '30%'}"></div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadColleges(career) {
+            const container = document.getElementById('collegesList');
+            if(!career || !career.colleges) return;
+            
+            container.innerHTML = career.colleges.map(college => `
+                <div class="college-item">
+                    <div class="college-info">
+                        <h4>${college.name}</h4>
+                        <span><i data-lucide="map-pin"></i> ${college.location}</span>
+                    </div>
+                    <span class="college-rank" style="font-size: 0.8rem; padding: 2px 8px; background: var(--gray-100); border-radius: 10px;">${college.type.toUpperCase()}</span>
+                </div>
+            `).join('');
+            
+            lucide.createIcons();
+        }
+
+        function loadResources(career) {
+            const container = document.getElementById('resourcesGrid');
+            if(!career || !career.resources) return;
+            
+            container.innerHTML = career.resources.map(resource => `
+                <a href="${resource.link}" target="_blank" class="resource-card">
+                    <div class="resource-icon">
+                        <i data-lucide="external-link"></i>
+                    </div>
+                    <div class="resource-info">
+                        <h4>${resource.name}</h4>
+                        <span>${resource.type}</span>
+                    </div>
+                </a>
+            `).join('');
+            
+            lucide.createIcons();
+        }
+
+        function animateScore(score) {
+            const circle = document.getElementById('scoreCircle');
+            const valueEl = document.getElementById('scoreValue');
+            const circumference = 2 * Math.PI * 45;
+            
+            // Set initial state (empty)
+            circle.style.strokeDasharray = circumference;
+            circle.style.strokeDashoffset = circumference;
+            
+            // Trigger animation
+            setTimeout(() => {
+                const offset = circumference - (score / 100) * circumference;
+                circle.style.strokeDashoffset = offset;
+                
+                let current = 0;
+                // Determine step for smooth counting (approx 1 sec duration)
+                const steps = 30;
+                const increment = score / steps;
+                let stepCount = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    stepCount++;
+                    
+                    if (stepCount >= steps) {
+                        current = score;
+                        clearInterval(timer);
+                    }
+                    
+                    valueEl.textContent = Math.round(current);
+                }, 30);
+            }, 500);
+        }
+
+        function shareResults() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'My Career Roadmap - PathFinder',
+                    text: 'Check out my personalized career roadmap!',
+                    url: window.location.href
+                });
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                alert('Link copied to clipboard!');
+            }
+        }
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Assessment — PathFinder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="questionnaire.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i data-lucide="compass" class="logo-icon"></i>
+                <span>PathFinder</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore Careers</a></li>
+                <li><a href="colleges.html">Find Colleges</a></li>
+                <li><a href="questionnaire.html" class="active">Career Assessment</a></li>
+            </ul>
+            <a href="questionnaire.html" class="nav-cta">
+                <span>Get Started</span>
+                <i data-lucide="arrow-right"></i>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore Careers</a></li>
+            <li><a href="colleges.html">Find Colleges</a></li>
+            <li><a href="questionnaire.html">Career Assessment</a></li>
+        </ul>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="questionnaire-main">
+        <div class="container">
+            <!-- Step Indicator -->
+            <div class="step-indicator" id="stepIndicator">
+                <div class="step active" data-step="1">
+                    <div class="step-circle"><i data-lucide="user"></i></div>
+                    <span>About You</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="2">
+                    <div class="step-circle"><i data-lucide="target"></i></div>
+                    <span>Goals</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="3">
+                    <div class="step-circle"><i data-lucide="graduation-cap"></i></div>
+                    <span>Education</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="4">
+                    <div class="step-circle"><i data-lucide="zap"></i></div>
+                    <span>Skills</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="5">
+                    <div class="step-circle"><i data-lucide="heart"></i></div>
+                    <span>Interests</span>
+                </div>
+            </div>
+
+            <!-- Form Container -->
+            <div class="form-container" id="formContainer">
+                <!-- Step 1: About You -->
+                <div class="form-step active" data-step="1">
+                    <div class="step-header">
+                        <span class="step-badge">Step 1 of 5</span>
+                        <h2>Tell us about yourself</h2>
+                        <p>Help us understand your background so we can provide personalized recommendations.</p>
+                    </div>
+                    <div class="form-content">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <select id="age" required>
+                                    <option value="">Select age</option>
+                                    <option value="14-16">14-16 years</option>
+                                    <option value="17-18">17-18 years</option>
+                                    <option value="19-21">19-21 years</option>
+                                    <option value="22-25">22-25 years</option>
+                                    <option value="26+">26+ years</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">State</label>
+                                <select id="location" required>
+                                    <option value="">Select state</option>
+                                    <option value="andhra-pradesh">Andhra Pradesh</option>
+                                    <option value="delhi">Delhi</option>
+                                    <option value="karnataka">Karnataka</option>
+                                    <option value="maharashtra">Maharashtra</option>
+                                    <option value="tamil-nadu">Tamil Nadu</option>
+                                    <option value="telangana">Telangana</option>
+                                    <option value="uttar-pradesh">Uttar Pradesh</option>
+                                    <option value="west-bengal">West Bengal</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="currentStatus">Current Status</label>
+                            <div class="radio-cards">
+                                <label class="radio-card">
+                                    <input type="radio" name="currentStatus" value="student">
+                                    <div class="card-content">
+                                        <i data-lucide="book-open"></i>
+                                        <span>Student</span>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="currentStatus" value="graduate">
+                                    <div class="card-content">
+                                        <i data-lucide="graduation-cap"></i>
+                                        <span>Fresh Graduate</span>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="currentStatus" value="working">
+                                    <div class="card-content">
+                                        <i data-lucide="briefcase"></i>
+                                        <span>Working Professional</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Goals -->
+                <div class="form-step" data-step="2">
+                    <div class="step-header">
+                        <span class="step-badge">Step 2 of 5</span>
+                        <h2>What are your career goals?</h2>
+                        <p>Tell us about your aspirations so we can guide you in the right direction.</p>
+                    </div>
+                    <div class="form-content">
+                        <div class="form-group">
+                            <label>Career Field Interest</label>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="careerFields" value="technology">
+                                    <div class="card-content">
+                                        <i data-lucide="cpu"></i>
+                                        <span>Technology</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="careerFields" value="healthcare">
+                                    <div class="card-content">
+                                        <i data-lucide="heart-pulse"></i>
+                                        <span>Healthcare</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="careerFields" value="business">
+                                    <div class="card-content">
+                                        <i data-lucide="trending-up"></i>
+                                        <span>Business</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="careerFields" value="creative">
+                                    <div class="card-content">
+                                        <i data-lucide="palette"></i>
+                                        <span>Creative Arts</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="careerFields" value="engineering">
+                                    <div class="card-content">
+                                        <i data-lucide="settings"></i>
+                                        <span>Engineering</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="careerFields" value="science">
+                                    <div class="card-content">
+                                        <i data-lucide="flask-conical"></i>
+                                        <span>Science</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dreamJob">Dream Job or Role (Optional)</label>
+                            <input type="text" id="dreamJob" placeholder="e.g., Software Engineer, Doctor, Designer...">
+                        </div>
+                        <div class="form-group">
+                            <label>Work Environment Preference</label>
+                            <div class="radio-cards">
+                                <label class="radio-card">
+                                    <input type="radio" name="workEnv" value="corporate">
+                                    <div class="card-content">
+                                        <i data-lucide="building-2"></i>
+                                        <span>Corporate</span>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="workEnv" value="startup">
+                                    <div class="card-content">
+                                        <i data-lucide="rocket"></i>
+                                        <span>Startup</span>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="workEnv" value="freelance">
+                                    <div class="card-content">
+                                        <i data-lucide="home"></i>
+                                        <span>Freelance</span>
+                                    </div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="workEnv" value="government">
+                                    <div class="card-content">
+                                        <i data-lucide="landmark"></i>
+                                        <span>Government</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Education -->
+                <div class="form-step" data-step="3">
+                    <div class="step-header">
+                        <span class="step-badge">Step 3 of 5</span>
+                        <h2>Your Educational Background</h2>
+                        <p>Share your academic details to help us match you with suitable career paths.</p>
+                    </div>
+                    <div class="form-content">
+                        <div class="form-group">
+                            <label for="education">Current/Highest Education Level</label>
+                            <select id="education" required>
+                                <option value="">Select education level</option>
+                                <option value="10th">10th Standard</option>
+                                <option value="12th">12th Standard</option>
+                                <option value="diploma">Diploma</option>
+                                <option value="bachelors">Bachelor's Degree</option>
+                                <option value="masters">Master's Degree</option>
+                                <option value="phd">Ph.D</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="stream">Stream/Specialization</label>
+                            <select id="stream" required>
+                                <option value="">Select stream</option>
+                                <option value="science-pcm">Science (PCM)</option>
+                                <option value="science-pcb">Science (PCB)</option>
+                                <option value="commerce">Commerce</option>
+                                <option value="arts">Arts/Humanities</option>
+                                <option value="engineering">Engineering</option>
+                                <option value="medical">Medical</option>
+                                <option value="management">Management</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="percentage">Percentage/CGPA</label>
+                                <input type="text" id="percentage" placeholder="e.g., 85% or 8.5 CGPA">
+                            </div>
+                            <div class="form-group">
+                                <label for="board">Board/University</label>
+                                <select id="board">
+                                    <option value="">Select board</option>
+                                    <option value="cbse">CBSE</option>
+                                    <option value="icse">ICSE</option>
+                                    <option value="state">State Board</option>
+                                    <option value="ib">IB</option>
+                                    <option value="university">University</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Competitive Exams (Select all that apply)</label>
+                            <div class="checkbox-list">
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="exams" value="jee">
+                                    <span>JEE (Main/Advanced)</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="exams" value="neet">
+                                    <span>NEET</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="exams" value="cat">
+                                    <span>CAT</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="exams" value="gate">
+                                    <span>GATE</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="exams" value="upsc">
+                                    <span>UPSC</span>
+                                </label>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" name="exams" value="none">
+                                    <span>None/Planning to take</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Skills -->
+                <div class="form-step" data-step="4">
+                    <div class="step-header">
+                        <span class="step-badge">Step 4 of 5</span>
+                        <h2>Your Skills & Strengths</h2>
+                        <p>What are you good at? Select skills you have or are developing.</p>
+                    </div>
+                    <div class="form-content">
+                        <div class="form-group">
+                            <label>Technical Skills</label>
+                            <div class="skill-tags" id="technicalSkills">
+                                <button type="button" class="skill-tag" data-skill="programming">Programming</button>
+                                <button type="button" class="skill-tag" data-skill="data-analysis">Data Analysis</button>
+                                <button type="button" class="skill-tag" data-skill="design">Design</button>
+                                <button type="button" class="skill-tag" data-skill="writing">Writing</button>
+                                <button type="button" class="skill-tag" data-skill="marketing">Marketing</button>
+                                <button type="button" class="skill-tag" data-skill="finance">Finance</button>
+                                <button type="button" class="skill-tag" data-skill="research">Research</button>
+                                <button type="button" class="skill-tag" data-skill="mathematics">Mathematics</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Soft Skills</label>
+                            <div class="skill-tags" id="softSkills">
+                                <button type="button" class="skill-tag" data-skill="communication">Communication</button>
+                                <button type="button" class="skill-tag" data-skill="leadership">Leadership</button>
+                                <button type="button" class="skill-tag" data-skill="teamwork">Teamwork</button>
+                                <button type="button" class="skill-tag" data-skill="problem-solving">Problem Solving</button>
+                                <button type="button" class="skill-tag" data-skill="creativity">Creativity</button>
+                                <button type="button" class="skill-tag" data-skill="time-management">Time Management</button>
+                                <button type="button" class="skill-tag" data-skill="critical-thinking">Critical Thinking</button>
+                                <button type="button" class="skill-tag" data-skill="adaptability">Adaptability</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="languages">Languages Known</label>
+                            <input type="text" id="languages" placeholder="e.g., English, Hindi, Python, JavaScript...">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Interests -->
+                <div class="form-step" data-step="5">
+                    <div class="step-header">
+                        <span class="step-badge">Step 5 of 5</span>
+                        <h2>Your Interests & Preferences</h2>
+                        <p>Help us understand what you enjoy doing in your free time.</p>
+                    </div>
+                    <div class="form-content">
+                        <div class="form-group">
+                            <label>What do you enjoy? (Select all that apply)</label>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="interests" value="building">
+                                    <div class="card-content">
+                                        <i data-lucide="hammer"></i>
+                                        <span>Building Things</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="interests" value="helping">
+                                    <div class="card-content">
+                                        <i data-lucide="hand-helping"></i>
+                                        <span>Helping Others</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="interests" value="analyzing">
+                                    <div class="card-content">
+                                        <i data-lucide="bar-chart-3"></i>
+                                        <span>Analyzing Data</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="interests" value="creating">
+                                    <div class="card-content">
+                                        <i data-lucide="sparkles"></i>
+                                        <span>Creating Art</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="interests" value="teaching">
+                                    <div class="card-content">
+                                        <i data-lucide="presentation"></i>
+                                        <span>Teaching</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="interests" value="exploring">
+                                    <div class="card-content">
+                                        <i data-lucide="globe"></i>
+                                        <span>Exploring</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="additionalInfo">Anything else you'd like to share?</label>
+                            <textarea id="additionalInfo" rows="4" placeholder="Tell us about your hobbies, achievements, or any specific career questions..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="form-navigation">
+                <button class="btn btn-back" id="prevBtn" disabled>
+                    <i data-lucide="arrow-left"></i>
+                    <span>Back</span>
+                </button>
+                <button class="btn btn-primary btn-next" id="nextBtn">
+                    <span>Continue</span>
+                    <i data-lucide="arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="questionnaire.js"></script>
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Colleges — PathFinder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="colleges.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i data-lucide="compass" class="logo-icon"></i>
+                <span>PathFinder</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore Careers</a></li>
+                <li><a href="colleges.html" class="active">Find Colleges</a></li>
+                <li><a href="questionnaire.html">Career Assessment</a></li>
+            </ul>
+            <a href="questionnaire.html" class="nav-cta">
+                <span>Get Started</span>
+                <i data-lucide="arrow-right"></i>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore Careers</a></li>
+            <li><a href="colleges.html">Find Colleges</a></li>
+            <li><a href="questionnaire.html">Career Assessment</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <span class="page-badge animate-fade-up">
+                    <i data-lucide="building-2"></i>
+                    <span>500+ Institutions</span>
+                </span>
+                <h1 class="page-title animate-fade-up delay-1">Find Your Dream College</h1>
+                <p class="page-subtitle animate-fade-up delay-2">
+                    Discover top colleges and universities across India. Filter by course, 
+                    location, ranking, and more to find the perfect fit.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Filters -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box animate-fade-up">
+                <i data-lucide="search"></i>
+                <input type="text" id="searchInput" placeholder="Search colleges by name, course, or location...">
+                <button class="search-clear" id="searchClear">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="filter-bar animate-fade-up delay-1">
+                <div class="filter-group">
+                    <label>State</label>
+                    <select id="stateFilter">
+                        <option value="">All States</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="maharashtra">Maharashtra</option>
+                        <option value="karnataka">Karnataka</option>
+                        <option value="tamil-nadu">Tamil Nadu</option>
+                        <option value="west-bengal">West Bengal</option>
+                        <option value="uttar-pradesh">Uttar Pradesh</option>
+                        <option value="telangana">Telangana</option>
+                        <option value="gujarat">Gujarat</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Course Type</label>
+                    <select id="courseFilter">
+                        <option value="">All Courses</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="medicine">Medicine</option>
+                        <option value="management">Management</option>
+                        <option value="science">Science</option>
+                        <option value="arts">Arts & Humanities</option>
+                        <option value="law">Law</option>
+                        <option value="design">Design</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>College Type</label>
+                    <select id="typeFilter">
+                        <option value="">All Types</option>
+                        <option value="iit">IIT</option>
+                        <option value="nit">NIT</option>
+                        <option value="iiit">IIIT</option>
+                        <option value="iim">IIM</option>
+                        <option value="central">Central University</option>
+                        <option value="state">State University</option>
+                        <option value="private">Private</option>
+                    </select>
+                </div>
+                <button class="filter-reset" id="filterReset">
+                    <i data-lucide="rotate-ccw"></i>
+                    <span>Reset</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Stats -->
+    <section class="results-stats">
+        <div class="container">
+            <div class="stats-bar">
+                <span class="results-count">
+                    Showing <strong id="resultsCount">0</strong> colleges
+                </span>
+                <div class="sort-group">
+                    <label>Sort by:</label>
+                    <select id="sortFilter">
+                        <option value="ranking">Ranking</option>
+                        <option value="name">Name (A-Z)</option>
+                        <option value="fees-low">Fees (Low to High)</option>
+                        <option value="fees-high">Fees (High to Low)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colleges Grid -->
+    <section class="colleges-section">
+        <div class="container">
+            <div class="colleges-grid" id="collegesGrid">
+                <!-- Colleges will be loaded dynamically -->
+            </div>
+            <div class="loading-indicator" id="loadingIndicator">
+                <div class="spinner"></div>
+                <span>Loading more colleges...</span>
+            </div>
+            <div class="no-results" id="noResults">
+                <i data-lucide="building-2"></i>
+                <h3>No colleges found</h3>
+                <p>Try adjusting your search or filters to find what you're looking for.</p>
+                <button class="btn btn-primary" id="clearFiltersBtn">
+                    <span>Clear All Filters</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- College Modal -->
+    <div class="modal-overlay" id="collegeModal">
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-content" id="modalContent">
+                <!-- Modal content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <i data-lucide="compass"></i>
+                        <span>PathFinder</span>
+                    </a>
+                    <p>Helping students discover their perfect career path through personalized guidance and actionable roadmaps.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="explore.html">Explore Careers</a></li>
+                        <li><a href="colleges.html">Find Colleges</a></li>
+                        <li><a href="questionnaire.html">Career Assessment</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Career Fields</h4>
+                    <ul>
+                        <li><a href="explore.html?category=technology">Technology</a></li>
+                        <li><a href="explore.html?category=healthcare">Healthcare</a></li>
+                        <li><a href="explore.html?category=business">Business</a></li>
+                        <li><a href="explore.html?category=engineering">Engineering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Get career tips and guidance delivered to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">
+                            <i data-lucide="send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PathFinder. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data/colleges.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            initNavbar();
+            initMobileMenu();
+            initCollegeExplorer();
+        });
+
+        function initNavbar() {
+            const navbar = document.getElementById('navbar');
+            if (!navbar) return;
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 50) navbar.classList.add('scrolled');
+            });
+        }
+
+        function initMobileMenu() {
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (!menuBtn || !mobileMenu) return;
+            
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                const icon = menuBtn.querySelector('i');
+                icon.setAttribute('data-lucide', mobileMenu.classList.contains('active') ? 'x' : 'menu');
+                lucide.createIcons();
+            });
+        }
+
+        function initCollegeExplorer() {
+            const grid = document.getElementById('collegesGrid');
+            const searchInput = document.getElementById('searchInput');
+            const searchClear = document.getElementById('searchClear');
+            const stateFilter = document.getElementById('stateFilter');
+            const courseFilter = document.getElementById('courseFilter');
+            const typeFilter = document.getElementById('typeFilter');
+            const sortFilter = document.getElementById('sortFilter');
+            const filterReset = document.getElementById('filterReset');
+            const resultsCount = document.getElementById('resultsCount');
+            const noResults = document.getElementById('noResults');
+            const clearFiltersBtn = document.getElementById('clearFiltersBtn');
+
+            // Sample colleges data
+            const colleges = [
+                { id: 1, name: 'Indian Institute of Technology Delhi', short: 'IIT Delhi', type: 'iit', state: 'delhi', course: 'engineering', ranking: 1, fees: '200000', image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80', website: 'https://iitd.ac.in' },
+                { id: 2, name: 'Indian Institute of Technology Bombay', short: 'IIT Bombay', type: 'iit', state: 'maharashtra', course: 'engineering', ranking: 2, fees: '200000', image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80', website: 'https://iitb.ac.in' },
+                { id: 3, name: 'Indian Institute of Management Ahmedabad', short: 'IIM Ahmedabad', type: 'iim', state: 'gujarat', course: 'management', ranking: 1, fees: '2300000', image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80', website: 'https://iima.ac.in' },
+                { id: 4, name: 'All India Institute of Medical Sciences', short: 'AIIMS Delhi', type: 'central', state: 'delhi', course: 'medicine', ranking: 1, fees: '100000', image: 'https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?w=600&q=80', website: 'https://aiims.edu' },
+                { id: 5, name: 'National Institute of Technology Karnataka', short: 'NIT Surathkal', type: 'nit', state: 'karnataka', course: 'engineering', ranking: 5, fees: '150000', image: 'https://images.unsplash.com/photo-1592280771190-3e2e4d571952?w=600&q=80', website: 'https://nitk.ac.in' },
+                { id: 6, name: 'Indian Institute of Science', short: 'IISc Bangalore', type: 'central', state: 'karnataka', course: 'science', ranking: 1, fees: '50000', image: 'https://images.unsplash.com/photo-1580537659466-0a9bfa916a54?w=600&q=80', website: 'https://iisc.ac.in' },
+                { id: 7, name: 'National Law School of India University', short: 'NLSIU Bangalore', type: 'central', state: 'karnataka', course: 'law', ranking: 1, fees: '250000', image: 'https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=600&q=80', website: 'https://nls.ac.in' },
+                { id: 8, name: 'National Institute of Design', short: 'NID Ahmedabad', type: 'central', state: 'gujarat', course: 'design', ranking: 1, fees: '350000', image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80', website: 'https://nid.edu' },
+                { id: 9, name: 'Indian Institute of Technology Madras', short: 'IIT Madras', type: 'iit', state: 'tamil-nadu', course: 'engineering', ranking: 3, fees: '200000', image: 'https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=600&q=80', website: 'https://iitm.ac.in' },
+                { id: 10, name: 'Jawaharlal Nehru University', short: 'JNU Delhi', type: 'central', state: 'delhi', course: 'arts', ranking: 2, fees: '20000', image: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=600&q=80', website: 'https://jnu.ac.in' },
+                { id: 11, name: 'Indian Institute of Technology Kanpur', short: 'IIT Kanpur', type: 'iit', state: 'uttar-pradesh', course: 'engineering', ranking: 4, fees: '200000', image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80', website: 'https://iitk.ac.in' },
+                { id: 12, name: 'BITS Pilani', short: 'BITS Pilani', type: 'private', state: 'rajasthan', course: 'engineering', ranking: 10, fees: '500000', image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80', website: 'https://bits-pilani.ac.in' },
+            ];
+
+            let filteredColleges = [...colleges];
+
+            function filterColleges() {
+                const searchTerm = searchInput?.value.toLowerCase() || '';
+                const state = stateFilter?.value || '';
+                const course = courseFilter?.value || '';
+                const type = typeFilter?.value || '';
+                const sort = sortFilter?.value || 'ranking';
+
+                filteredColleges = colleges.filter(college => {
+                    const matchesSearch = !searchTerm || 
+                        college.name.toLowerCase().includes(searchTerm) ||
+                        college.short.toLowerCase().includes(searchTerm);
+                    const matchesState = !state || college.state === state;
+                    const matchesCourse = !course || college.course === course;
+                    const matchesType = !type || college.type === type;
+                    return matchesSearch && matchesState && matchesCourse && matchesType;
+                });
+
+                // Sort
+                filteredColleges.sort((a, b) => {
+                    switch(sort) {
+                        case 'name': return a.name.localeCompare(b.name);
+                        case 'fees-low': return parseInt(a.fees) - parseInt(b.fees);
+                        case 'fees-high': return parseInt(b.fees) - parseInt(a.fees);
+                        default: return a.ranking - b.ranking;
+                    }
+                });
+
+                renderColleges();
+            }
+
+            function renderColleges() {
+                if (!grid) return;
+                grid.innerHTML = '';
+
+                if (resultsCount) resultsCount.textContent = filteredColleges.length;
+                if (noResults) noResults.classList.toggle('visible', filteredColleges.length === 0);
+
+                filteredColleges.forEach((college, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'college-card';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'all 0.5s ease';
+
+                    card.innerHTML = `
+                        <div class="college-image">
+                            <img src="${college.image}" alt="${college.name}" loading="lazy">
+                            <span class="college-rank">#${college.ranking}</span>
+                        </div>
+                        <div class="college-content">
+                            <span class="college-type">${college.type.toUpperCase()}</span>
+                            <h3>${college.short}</h3>
+                            <p>${college.name}</p>
+                            <div class="college-meta">
+                                <span class="meta-item">
+                                    <i data-lucide="map-pin"></i>
+                                    ${college.state.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                                </span>
+                                <span class="meta-item">
+                                    <i data-lucide="indian-rupee"></i>
+                                    ${(parseInt(college.fees)/100000).toFixed(1)}L/year
+                                </span>
+                            </div>
+                        </div>
+                    `;
+
+                    card.addEventListener('click', () => openCollegeModal(college));
+                    grid.appendChild(card);
+
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+
+                lucide.createIcons();
+            }
+
+            function openCollegeModal(college) {
+                const modal = document.getElementById('collegeModal');
+                const modalContent = document.getElementById('modalContent');
+                if (!modal || !modalContent) return;
+
+                modalContent.innerHTML = `
+                    <div class="modal-header">
+                        <img src="${college.image}" alt="${college.name}">
+                        <div class="modal-header-overlay"></div>
+                        <div class="modal-header-content">
+                            <span class="modal-category">${college.type.toUpperCase()}</span>
+                            <h2 class="modal-title">${college.name}</h2>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-stats">
+                            <div class="modal-stat">
+                                <span class="modal-stat-value">#${college.ranking}</span>
+                                <span class="modal-stat-label">NIRF Ranking</span>
+                            </div>
+                            <div class="modal-stat">
+                                <span class="modal-stat-value">₹${(parseInt(college.fees)/100000).toFixed(1)}L</span>
+                                <span class="modal-stat-label">Annual Fees</span>
+                            </div>
+                            <div class="modal-stat">
+                                <span class="modal-stat-value">${college.course.charAt(0).toUpperCase() + college.course.slice(1)}</span>
+                                <span class="modal-stat-label">Primary Focus</span>
+                            </div>
+                        </div>
+                        <div class="modal-section">
+                            <h4><i data-lucide="map-pin"></i> Location</h4>
+                            <p>${college.state.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())}, India</p>
+                        </div>
+                        <div class="modal-section">
+                            <h4><i data-lucide="info"></i> About</h4>
+                            <p>${college.name} is one of India's premier institutions known for excellence in ${college.course}. It offers world-class education and research opportunities.</p>
+                        </div>
+                        <div class="modal-cta">
+                            <a href="${college.website}" target="_blank" class="btn btn-primary">
+                                <i data-lucide="external-link"></i>
+                                <span>Visit Website</span>
+                            </a>
+                            <a href="questionnaire.html" class="btn btn-outline" style="border-color: var(--gray-200); color: var(--gray-700);">
+                                <span>Check Your Eligibility</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                lucide.createIcons();
+            }
+
+            // Event listeners
+            const modalClose = document.getElementById('modalClose');
+            const modal = document.getElementById('collegeModal');
+
+            if (modalClose) modalClose.addEventListener('click', closeModal);
+            if (modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+
+            function closeModal() {
+                const modal = document.getElementById('collegeModal');
+                if (modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    if (searchClear) searchClear.classList.toggle('visible', searchInput.value.length > 0);
+                    filterColleges();
+                });
+            }
+
+            if (searchClear) {
+                searchClear.addEventListener('click', () => {
+                    searchInput.value = '';
+                    searchClear.classList.remove('visible');
+                    filterColleges();
+                });
+            }
+
+            if (stateFilter) stateFilter.addEventListener('change', filterColleges);
+            if (courseFilter) courseFilter.addEventListener('change', filterColleges);
+            if (typeFilter) typeFilter.addEventListener('change', filterColleges);
+            if (sortFilter) sortFilter.addEventListener('change', filterColleges);
+
+            function resetFilters() {
+                if (searchInput) searchInput.value = '';
+                if (searchClear) searchClear.classList.remove('visible');
+                if (stateFilter) stateFilter.value = '';
+                if (courseFilter) courseFilter.value = '';
+                if (typeFilter) typeFilter.value = '';
+                if (sortFilter) sortFilter.value = 'ranking';
+                filterColleges();
+            }
+
+            if (filterReset) filterReset.addEventListener('click', resetFilters);
+            if (clearFiltersBtn) clearFiltersBtn.addEventListener('click', resetFilters);
+
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+            filterColleges();
+        }
+    </script>
+</body>
+</html>

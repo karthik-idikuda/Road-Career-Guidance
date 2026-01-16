@@ -1,0 +1,188 @@
+/* ========================================
+   PathFinder - Results Page Styles
+   PREMIUM WHITE GLASS THEME
+   ======================================== */
+
+/* Results Header */
+.results-header {
+    padding: 180px 0 80px;
+    background: transparent;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--bg-surface);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.3);
+    border: 2px solid white;
+}
+
+.success-icon i {
+    width: 40px;
+    height: 40px;
+    color: var(--primary);
+}
+
+.results-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: var(--gradient-premium);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.results-header p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+}
+
+/* Results Main */
+.results-main {
+    padding: 2rem 0 6rem;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 3rem;
+}
+
+/* Glass Section Container */
+.result-section {
+    background: var(--bg-glass);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.result-section:hover {
+    box-shadow: var(--shadow-3d);
+}
+
+.section-header-inline {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.section-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-premium);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.4);
+    color: white;
+}
+
+.section-header-inline h2 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin: 0;
+}
+
+/* Career Match Cards */
+.career-match-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.career-match-card {
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.career-match-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1);
+    background: white;
+}
+
+.match-image {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.match-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.match-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-pill);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* Timeline */
+.timeline-marker {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 4px solid var(--primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+.timeline-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid var(--primary);
+}
+
+/* Sidebar */
+.sidebar-card {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Score Circle layout remains mostly same but using vars */
+.score-fill {
+    stroke: var(--primary);
+    filter: drop-shadow(0 0 4px var(--primary));
+}
+
+.score-value span:first-child {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    background: var(--gradient-premium);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .results-grid { grid-template-columns: 1fr; }
+}

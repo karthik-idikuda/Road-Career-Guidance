@@ -1,0 +1,99 @@
+/* ========================================
+   PathFinder - Questionnaire Page
+   PREMIUM WHITE GLASS THEME
+   ======================================== */
+
+.progress-container {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(5px);
+}
+
+.progress-bar {
+    background: var(--gradient-premium);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+}
+
+.questionnaire-main {
+    padding: 120px 0 80px;
+    background: transparent;
+}
+
+/* Step Circles */
+.step-circle {
+    background: var(--bg-surface);
+    border: 2px solid rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-sm);
+}
+
+.step.active .step-circle {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+}
+
+/* Glass Form Card */
+.form-step {
+    background: var(--bg-glass-strong);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-xl);
+    padding: 3rem;
+    box-shadow: var(--shadow-3d);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: rgba(255,255,255,0.5);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: var(--radius-lg);
+    font-family: var(--font-sans);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    background: white;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Radio/Checkbox Cards */
+.radio-card .card-content, .checkbox-card .card-content {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+}
+
+.radio-card:hover .card-content, .checkbox-card:hover .card-content {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.radio-card input:checked + .card-content, .checkbox-card input:checked + .card-content {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.radio-card input:checked + .card-content i, 
+.radio-card input:checked + .card-content span,
+.checkbox-card input:checked + .card-content i, 
+.checkbox-card input:checked + .card-content span {
+    color: white;
+}
+
+/* Buttons */
+.btn-back {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.1);
+    color: var(--text-muted);
+}
+
+.btn-back:hover {
+    background: var(--bg-surface);
+    color: var(--text-main);
+}

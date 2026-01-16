@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathFinder — Your Career Journey Starts Here</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i data-lucide="compass" class="logo-icon"></i>
+                <span>PathFinder</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="explore.html">Explore Careers</a></li>
+                <li><a href="colleges.html">Find Colleges</a></li>
+                <li><a href="questionnaire.html">Career Assessment</a></li>
+            </ul>
+            <a href="questionnaire.html" class="nav-cta">
+                <span>Get Started</span>
+                <i data-lucide="arrow-right"></i>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore Careers</a></li>
+            <li><a href="colleges.html">Find Colleges</a></li>
+            <li><a href="questionnaire.html">Career Assessment</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section with Parallax -->
+    <section class="hero" id="hero">
+    <!-- Hero Section with 3D Parallax Orbs -->
+    <section class="hero" id="hero">
+        <!-- Decorative Background Orbs -->
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+        
+        <div class="hero-content">
+            <div class="hero-badge animate-fade-up">
+                <i data-lucide="sparkles"></i>
+                <span>Trusted by 50,000+ Students</span>
+            </div>
+            <h1 class="hero-title animate-fade-up delay-1">
+                Discover Your <span class="text-gradient">True Calling</span>
+            </h1>
+            <p class="hero-subtitle animate-fade-up delay-2">
+                A premium guidance platform tailored to your unique story. 
+                We combine human insight with data to craft your perfect career roadmap.
+            </p>
+            <div class="hero-cta-group animate-fade-up delay-3" style="display:flex; gap:1rem; justify-content:center;">
+                <a href="questionnaire.html" class="btn btn-primary">
+                    <span>Start Your Journey</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="explore.html" class="btn btn-outline">
+                    <i data-lucide="compass"></i>
+                    <span>Explore Careers</span>
+                </a>
+            </div>
+            
+            <!-- Glass Stats Bar -->
+            <div class="glass-card animate-fade-up delay-4" style="margin-top: 4rem; padding: 1.5rem 3rem; display: inline-flex; gap: 4rem; align-items: center;">
+                <div class="stat-item">
+                    <strong style="font-size: 2rem; display:block; line-height:1;">150+</strong>
+                    <span style="font-size: 0.9rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px;">Careers</span>
+                </div>
+                <div style="width: 1px; height: 40px; background: var(--text-light); opacity: 0.3;"></div>
+                <div class="stat-item">
+                    <strong style="font-size: 2rem; display:block; line-height:1;">500+</strong>
+                    <span style="font-size: 0.9rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px;">Colleges</span>
+                </div>
+                <div style="width: 1px; height: 40px; background: var(--text-light); opacity: 0.3;"></div>
+                <div class="stat-item">
+                    <strong style="font-size: 2rem; display:block; line-height:1;">50K+</strong>
+                    <span style="font-size: 0.9rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 1px;">Students</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge animate-on-scroll">How It Works</span>
+                <h2 class="section-title animate-on-scroll">Your Personal Roadmap</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    We take the time to understand your unique story to help you craft a step-by-step plan for your future
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i data-lucide="target"></i>
+                    </div>
+                    <div class="feature-step">01</div>
+                    <h3>Define Your Goals</h3>
+                    <p>Tell us about your career aspirations, interests, and what excites you about the future</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i data-lucide="bar-chart-3"></i>
+                    </div>
+                    <div class="feature-step">02</div>
+                    <h3>Share Your Profile</h3>
+                    <p>Share your academic journey, skills, and interests so we can understand you better</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i data-lucide="route"></i>
+                    </div>
+                    <div class="feature-step">03</div>
+                    <h3>Get Your Roadmap</h3>
+                    <p>Receive a detailed action plan with courses, colleges, skills to develop, and timeline</p>
+                </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">
+                        <i data-lucide="rocket"></i>
+                    </div>
+                    <div class="feature-step">04</div>
+                    <h3>Start Your Journey</h3>
+                    <p>Follow your personalized roadmap and track your progress towards your dream career</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Categories with Parallax -->
+    <section class="categories" id="categories">
+        <div class="categories-parallax" data-speed="0.3">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80" alt="Modern workspace" class="parallax-img">
+            <div class="categories-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="section-header light">
+                <span class="section-badge animate-on-scroll">Career Domains</span>
+                <h2 class="section-title animate-on-scroll">Explore Career Fields</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    Discover diverse career paths across multiple industries and find where you belong
+                </p>
+            </div>
+            <div class="categories-grid">
+                <a href="explore.html?category=technology" class="category-card animate-on-scroll">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80" alt="Technology">
+                    </div>
+                    <div class="category-content">
+                        <i data-lucide="cpu"></i>
+                        <h3>Technology</h3>
+                        <p>Software, Data Science, Web & more</p>
+                        <span class="category-count">45+ Careers</span>
+                    </div>
+                </a>
+                <a href="explore.html?category=healthcare" class="category-card animate-on-scroll">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&q=80" alt="Healthcare">
+                    </div>
+                    <div class="category-content">
+                        <i data-lucide="heart-pulse"></i>
+                        <h3>Healthcare</h3>
+                        <p>Medicine, Nursing, Research & more</p>
+                        <span class="category-count">35+ Careers</span>
+                    </div>
+                </a>
+                <a href="explore.html?category=business" class="category-card animate-on-scroll">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=600&q=80" alt="Business">
+                    </div>
+                    <div class="category-content">
+                        <i data-lucide="briefcase"></i>
+                        <h3>Business</h3>
+                        <p>Finance, Marketing, Management & more</p>
+                        <span class="category-count">40+ Careers</span>
+                    </div>
+                </a>
+                <a href="explore.html?category=creative" class="category-card animate-on-scroll">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="Creative">
+                    </div>
+                    <div class="category-content">
+                        <i data-lucide="palette"></i>
+                        <h3>Creative Arts</h3>
+                        <p>Design, Media, Entertainment & more</p>
+                        <span class="category-count">30+ Careers</span>
+                    </div>
+                </a>
+                <a href="explore.html?category=engineering" class="category-card animate-on-scroll">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80" alt="Engineering">
+                    </div>
+                    <div class="category-content">
+                        <i data-lucide="settings"></i>
+                        <h3>Engineering</h3>
+                        <p>Mechanical, Civil, Electrical & more</p>
+                        <span class="category-count">50+ Careers</span>
+                    </div>
+                </a>
+                <a href="explore.html?category=science" class="category-card animate-on-scroll">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&q=80" alt="Science">
+                    </div>
+                    <div class="category-content">
+                        <i data-lucide="flask-conical"></i>
+                        <h3>Science</h3>
+                        <p>Research, Biology, Physics & more</p>
+                        <span class="category-count">25+ Careers</span>
+                    </div>
+                </a>
+            </div>
+            <div class="categories-cta animate-on-scroll">
+                <a href="explore.html" class="btn btn-white btn-lg">
+                    <span>View All Careers</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="why-us-grid">
+                <div class="why-us-content">
+                    <span class="section-badge animate-on-scroll">Why PathFinder</span>
+                    <h2 class="section-title animate-on-scroll">Built by Experts, Designed for You</h2>
+                    <p class="section-text animate-on-scroll">
+                        Our platform combines deep industry knowledge with personalized guidance to help 
+                        students make informed career decisions. We don't just show you careers—we show you 
+                        exactly how to get there.
+                    </p>
+                    <ul class="benefits-list">
+                        <li class="animate-on-scroll">
+                            <i data-lucide="check-circle-2"></i>
+                            <span>Personalized recommendations based on your unique profile</span>
+                        </li>
+                        <li class="animate-on-scroll">
+                            <i data-lucide="check-circle-2"></i>
+                            <span>Step-by-step roadmaps with courses and skill requirements</span>
+                        </li>
+                        <li class="animate-on-scroll">
+                            <i data-lucide="check-circle-2"></i>
+                            <span>College recommendations matched to your goals and scores</span>
+                        </li>
+                        <li class="animate-on-scroll">
+                            <i data-lucide="check-circle-2"></i>
+                            <span>Real salary data and job market insights</span>
+                        </li>
+                        <li class="animate-on-scroll">
+                            <i data-lucide="check-circle-2"></i>
+                            <span>Free resources and learning paths for every career</span>
+                        </li>
+                    </ul>
+                    <a href="questionnaire.html" class="btn btn-primary animate-on-scroll">
+                        <span>Take Career Assessment</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                </div>
+                <div class="why-us-image animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&q=80" alt="Career guidance">
+                    <div class="image-accent"></div>
+                    <div class="floating-card card-1">
+                        <i data-lucide="trophy"></i>
+                        <div>
+                            <span class="card-number">95%</span>
+                            <span class="card-text">Success Rate</span>
+                        </div>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i data-lucide="users"></i>
+                        <div>
+                            <span class="card-number">50K+</span>
+                            <span class="card-text">Students Helped</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge animate-on-scroll">Success Stories</span>
+                <h2 class="section-title animate-on-scroll">What Students Say</h2>
+                <p class="section-subtitle animate-on-scroll">
+                    Join thousands of students who found their perfect career path
+                </p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "PathFinder helped me realize that my passion for art could lead to a career in UX Design. 
+                            Now I'm studying at NID and loving every moment!"
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Priya">
+                            <div>
+                                <h4>Priya Sharma</h4>
+                                <span>UX Design Student, NID</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "I was confused between medicine and biotech. The career assessment showed me how 
+                            I could combine both interests in bioinformatics. Best decision ever!"
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Rahul">
+                            <div>
+                                <h4>Rahul Verma</h4>
+                                <span>MS Bioinformatics, IIT Delhi</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "The roadmap feature is incredible! It broke down exactly what skills I needed, 
+                            which colleges to target, and what courses to take. Super helpful!"
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Ananya">
+                            <div>
+                                <h4>Ananya Patel</h4>
+                                <span>Software Engineer, Google</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                            <i data-lucide="star"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Coming from a small town, I had no idea about career options in finance. 
+                            PathFinder opened my eyes to the world of investment banking!"
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="Vikram">
+                            <div>
+                                <h4>Vikram Singh</h4>
+                                <span>Analyst, JP Morgan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="testimonial-btn prev" id="prevBtn">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+                <div class="testimonial-dots" id="testimonialDots"></div>
+                <button class="testimonial-btn next" id="nextBtn">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="cta-parallax" data-speed="0.4">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1920&q=80" alt="Graduation" class="parallax-img">
+            <div class="cta-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2>Ready to Discover Your Path?</h2>
+                <p>Take our comprehensive career assessment and get your personalized roadmap today. It's free!</p>
+                <div class="cta-buttons">
+                    <a href="questionnaire.html" class="btn btn-white btn-lg">
+                        <span>Start Free Assessment</span>
+                        <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="explore.html" class="btn btn-outline-white btn-lg">
+                        <i data-lucide="compass"></i>
+                        <span>Browse Careers</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <i data-lucide="compass"></i>
+                        <span>PathFinder</span>
+                    </a>
+                    <p>Helping students discover their perfect career path through personalized guidance and actionable roadmaps.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="explore.html">Explore Careers</a></li>
+                        <li><a href="colleges.html">Find Colleges</a></li>
+                        <li><a href="questionnaire.html">Career Assessment</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Career Fields</h4>
+                    <ul>
+                        <li><a href="explore.html?category=technology">Technology</a></li>
+                        <li><a href="explore.html?category=healthcare">Healthcare</a></li>
+                        <li><a href="explore.html?category=business">Business</a></li>
+                        <li><a href="explore.html?category=engineering">Engineering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Get career tips and guidance delivered to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">
+                            <i data-lucide="send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PathFinder. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Careers — PathFinder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="explore.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i data-lucide="compass" class="logo-icon"></i>
+                <span>PathFinder</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html" class="active">Explore Careers</a></li>
+                <li><a href="colleges.html">Find Colleges</a></li>
+                <li><a href="questionnaire.html">Career Assessment</a></li>
+            </ul>
+            <a href="questionnaire.html" class="nav-cta">
+                <span>Get Started</span>
+                <i data-lucide="arrow-right"></i>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="explore.html">Explore Careers</a></li>
+            <li><a href="colleges.html">Find Colleges</a></li>
+            <li><a href="questionnaire.html">Career Assessment</a></li>
+        </ul>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <span class="page-badge animate-fade-up">
+                    <i data-lucide="briefcase"></i>
+                    <span>150+ Career Paths</span>
+                </span>
+                <h1 class="page-title animate-fade-up delay-1">Explore Career Opportunities</h1>
+                <p class="page-subtitle animate-fade-up delay-2">
+                    Discover diverse career paths across industries. Find detailed information about 
+                    requirements, salaries, and growth opportunities.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Filters -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box animate-fade-up">
+                <i data-lucide="search"></i>
+                <input type="text" id="searchInput" placeholder="Search careers by title, skills, or industry...">
+                <button class="search-clear" id="searchClear">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="filter-bar animate-fade-up delay-1">
+                <div class="filter-group">
+                    <label>Category</label>
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                        <option value="technology">Technology</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="business">Business & Finance</option>
+                        <option value="creative">Creative Arts</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="science">Science & Research</option>
+                        <option value="education">Education</option>
+                        <option value="legal">Legal</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Experience Level</label>
+                    <select id="experienceFilter">
+                        <option value="">All Levels</option>
+                        <option value="entry">Entry Level</option>
+                        <option value="mid">Mid Level</option>
+                        <option value="senior">Senior Level</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Salary Range</label>
+                    <select id="salaryFilter">
+                        <option value="">All Salaries</option>
+                        <option value="0-5">Under ₹5 LPA</option>
+                        <option value="5-10">₹5 - 10 LPA</option>
+                        <option value="10-20">₹10 - 20 LPA</option>
+                        <option value="20+">Above ₹20 LPA</option>
+                    </select>
+                </div>
+                <button class="filter-reset" id="filterReset">
+                    <i data-lucide="rotate-ccw"></i>
+                    <span>Reset</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Stats -->
+    <section class="results-stats">
+        <div class="container">
+            <div class="stats-bar">
+                <span class="results-count">
+                    Showing <strong id="resultsCount">0</strong> careers
+                </span>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid" id="gridViewBtn">
+                        <i data-lucide="grid-3x3"></i>
+                    </button>
+                    <button class="view-btn" data-view="list" id="listViewBtn">
+                        <i data-lucide="list"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Grid -->
+    <section class="careers-section">
+        <div class="container">
+            <div class="careers-grid" id="careersGrid">
+                <!-- Careers will be loaded dynamically -->
+            </div>
+            <div class="loading-indicator" id="loadingIndicator">
+                <div class="spinner"></div>
+                <span>Loading more careers...</span>
+            </div>
+            <div class="no-results" id="noResults">
+                <i data-lucide="search-x"></i>
+                <h3>No careers found</h3>
+                <p>Try adjusting your search or filters to find what you're looking for.</p>
+                <button class="btn btn-primary" id="clearFiltersBtn">
+                    <span>Clear All Filters</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Modal -->
+    <div class="modal-overlay" id="careerModal">
+        <div class="modal-container">
+            <button class="modal-close" id="modalClose">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-content" id="modalContent">
+                <!-- Modal content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <i data-lucide="compass"></i>
+                        <span>PathFinder</span>
+                    </a>
+                    <p>Helping students discover their perfect career path through personalized guidance and actionable roadmaps.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="explore.html">Explore Careers</a></li>
+                        <li><a href="colleges.html">Find Colleges</a></li>
+                        <li><a href="questionnaire.html">Career Assessment</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Career Fields</h4>
+                    <ul>
+                        <li><a href="explore.html?category=technology">Technology</a></li>
+                        <li><a href="explore.html?category=healthcare">Healthcare</a></li>
+                        <li><a href="explore.html?category=business">Business</a></li>
+                        <li><a href="explore.html?category=engineering">Engineering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Get career tips and guidance delivered to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">
+                            <i data-lucide="send"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PathFinder. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data/careers.js"></script>
+    <script src="explore.js"></script>
+</body>
+</html>
