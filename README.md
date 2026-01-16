@@ -1,61 +1,41 @@
-# 🎓 Road - College Career Guidance Platform
+# Road Career Guidance Platform
 
-A comprehensive college finder and career guidance web application with questionnaire-based recommendations.
+## Overview
+Road is an AI-driven career counseling platform designed to help students and professionals navigate their career paths. By analyzing user interests, skills, and academic history, the system provides personalized recommendations for courses, colleges, and potential job roles.
 
----
+## Features
+-   **Career Assessment**: Comprehensive quizzes to evaluate aptitude and interests.
+-   **AI Recommendations**: Machine learning engine suggesting suitable career trajectories.
+-   **Roadmap Generation**: Visual step-by-step guides to achieving career goals.
+-   **Resource Library**: Curated list of courses, certifications, and reading materials.
+-   **Mentorship Connection**: Feature to connect users with industry professionals.
 
-## 🌟 Overview
+## Technology Stack
+-   **Frontend**: React / Next.js.
+-   **Backend**: Node.js / Python.
+-   **Database**: MongoDB.
+-   **AI**: Classification models for interest mapping.
 
-Road helps students find the right college and career path through interactive questionnaires, exploration tools, and data-driven recommendations.
+## Usage Flow
+1.  **Onboard**: User creates a profile and completes the assessment.
+2.  **Analyze**: System processes the data to identify strengths.
+3.  **Recommend**: A personalized dashboard displays career options.
+4.  **Plan**: User selects a path and views the detailed roadmap.
 
-## ✨ Features
-
-- **College Database** - Extensive college listings
-- **Career Questionnaire** - Personalized assessments
-- **Exploration Tools** - Interactive discovery
-- **Smart Recommendations** - AI-powered suggestions
-
-## 📁 Project Structure
-
-```
-road/
-├── index.html         # Home page
-├── colleges.html      # College listings
-├── explore.html       # Exploration page
-├── questionnaire.html # Assessment quiz
-├── results.html       # Results display
-├── data/              # College data
-└── *.css, *.js        # Styles & scripts
-```
-
-## 🚀 Quick Start
-
+## Quick Start
 ```bash
-# Open in browser
-open index.html
+# Clone the repository
+git clone https://github.com/Nytrynox/Road-Career-Guidance.git
 
-# Or use a local server
-python -m http.server 8080
+# Install dependencies
+npm install
+
+# Run the application
+npm start
 ```
 
-Access at: `http://localhost:8080`
-
-## 🔬 Technology Stack
-
-| Component | Technology |
-|-----------|------------|
-| Frontend | HTML, CSS, JavaScript |
-| Data | JSON |
-
-## 📝 License
-
+## License
 MIT License
 
-## 👤 Author
-
-**Karthik Idikuda**  
-Full Stack Developer | EdTech Enthusiast
-
----
-
-*Find your path*
+## Author
+**Karthik Idikuda**
